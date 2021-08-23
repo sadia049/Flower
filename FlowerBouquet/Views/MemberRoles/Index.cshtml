@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FlowerBouquet.Models.MemberRole>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Members.F_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Roles.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Members.F_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Roles.RoleName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MemberRoleID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MemberRoleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MemberRoleID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model FlowerBouquet.Models.MemberRole
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MemberRole</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Members.F_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Members.F_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Roles.RoleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roles.RoleName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MemberRoleID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
